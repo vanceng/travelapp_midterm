@@ -21,14 +21,14 @@ task "db:version" do
   puts "Current version: #{ActiveRecord::Migrator.current_version}"
 end
 
-# desc 'adds dummy data'
-# task "db:populate" do
-#   traveller.delete_all
-#   traveller.create!()
-#   traveller.create!()
+desc 'adds dummy data'
+task "db:populate" do
+  # traveller.delete_all
+  # traveller.create!()
+  # traveller.create!()
 
-#   memory.delete_all
-#   memory.create!()
-#   memory.create!()
-# end
+  Memory.delete_all
+  Memory.create!(traveller_id: 1, comment: "Best Coffee shop", category: "food", photo_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/200px-Ruby_logo.svg.png")
+  # Memory.create!()
+end
 
