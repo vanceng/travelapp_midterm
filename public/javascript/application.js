@@ -48,7 +48,7 @@ $(document).ready(function() {
 
   // function renderMap(postParams) {
   //   $.ajax({
-  //     url: '/selection',
+  //     url: '/map',
   //     method: 'POST',
   //     data: postParams,
   //     dataType: 'json'

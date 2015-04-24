@@ -11,6 +11,7 @@ gem 'google_places'
 
 gem 'puma'
 gem 'tux'
+gem 'google_places'
 
 group :development, :test do
   gem 'pry'
