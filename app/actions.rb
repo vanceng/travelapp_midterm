@@ -11,4 +11,6 @@ post '/selection' do
   longitude = @location[0].data["longitude"]
 
   @spots = @client.spots(latitude, longitude, :name => @meal, :radius => @radius)
+
 end
+
