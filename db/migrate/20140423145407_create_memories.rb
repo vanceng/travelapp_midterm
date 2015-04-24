@@ -10,9 +10,11 @@ class CreateMemories < ActiveRecord::Migration
     create_table :memories do |t|
       t.integer :traveller_id
       t.string :title
+      t.string :city
       t.string :comment
-      t.string :address
       t.string :category
+      t.string :latitude
+      t.string :longitude
       t.datetime :created_at
       t.datetime :updated_at
       # column definitions go here
