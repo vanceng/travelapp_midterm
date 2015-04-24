@@ -15,8 +15,13 @@
 
   </script>
 
+  <!-- ajax call goes to backend and activate the google map request-->
+  <!-- ajax on success method grabs return json object and gives it  -->
 
-  <form method="POST" action="/memory/create" class='memory_form'>
+  <!-- use google places api for city name and address -->
+
+
+  <form method="POST" action="/create" class='memory_form'>
     <label for="memories">Enter your Memory:</label>
     <input type="text" name="memory" value="" placeholder="What was memorable about this spot?"><br><br>
     <label for="url">Photo URL:</label>

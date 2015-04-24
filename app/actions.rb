@@ -31,7 +31,7 @@ post '/signup' do
     erb :'traveller/login_signup'
 end 
 
-post '/memory/create' do
+post '/create' do
   redirect '/' unless session[:id]
   @memory = Memory.create(
     traveller_id: session[:id],
@@ -70,7 +70,7 @@ end
 #   latitude = @location[0].data["latitude"]
 #   longitude = @location[0].data["longitude"]
 
-#   @spots = @client.spots(latitude, longitude, :name => @meal, :radius => @radius)
+#   @spots = @client.spots(latitude, longitude)
 
 # end
 
