@@ -3,7 +3,8 @@
 
 get '/' do
   @memories = Memory.all 
-  erb :'index'
+  @memories.to_json
+  # erb :'index'
 end
 
 post '/' do
@@ -37,6 +38,7 @@ end
 get '/memory/create' do
   # puts "hello"
   erb :'memory/create'
+
 end
 
 post '/memory/create' do
@@ -72,11 +74,11 @@ get '/traveller/:id/:city' do
   erb :'memory/display'
 end 
 
-# post '/selection' do
+# post '/map' do
 #   @client = GooglePlaces::Client.new("AIzaSyCoKTsUyTkHVTRQIcDNxZkPrwL-aunhQL4")
 
-#   latitude = @location[0].data["latitude"]
-#   longitude = @location[0].data["longitude"]
+#   latitude = @memory[:latitude]
+#   longitude = @memory[:longitude]
 
 #   @spots = @client.spots(latitude, longitude)
 

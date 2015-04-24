@@ -1,7 +1,29 @@
+  <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?libraries=places,key=AIzaSyCoKTsUyTkHVTRQIcDNxZkPrwL-aunhQL4">
+    </script>
+
+  <style type="text/css">
+    html, body { height: 100%; margin: 0; padding: 0;}
+
+    #map-canvas { height: 300px; width: 300px;}
+  </style>
+
+
   <script type="text/javascript"> 
 
-  navigator.geolocation.getCurrentPosition(show_map);
+  var coordinates = {lat: 0, lon: 0}; 
+
+
+  navigator.geolocation.getCurrentPosition(set_coordinates);
+  function set_coordinates(obj) {
+    coordinates.lat = obj.coords.latitude;
+    coordinates.lon = obj.coords.longitude;
+    generateMap();
+  }
+
+  
   function show_map(obj) {
+    // debugger;
     $('input.latitude').val(obj.coords.latitude);
     $('input.longitude').val(obj.coords.longitude);
   }
@@ -13,15 +35,48 @@
     }
   });
 
+
+
+var map;
+var service;
+var infowindow;
+
+function generateMap() {
+    // debugger;
+  var place_name = new google.maps.LatLng(coordinates.lat, coordinates.lon);
+
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+      center: { lat: coordinates.lat, lng: coordinates.lon},
+      zoom: 15
+    });
+
+  var request = {
+    location: place_name,
+    // radius: '500',
+    rankBy: google.maps.places.RankBy.DISTANCE,
+    // types: ['store']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      debugger;
+    }
+  }
+}
+
+// google.maps.event.addDomListener(window, 'load', generateMap);
+
+  </script>
+<div id="map-canvas"></div>
+
   </script>
 
-  <!-- ajax call goes to backend and activate the google map request-->
-  <!-- ajax on success method grabs return json object and gives it  -->
-
-  <!-- use google places api for city name and address -->
-
-
-  <form method="POST" action="/create" class='memory_form'>
+  <form method="POST" action="/memory/create" class='memory_form'>
     <label for="memories">Enter your Memory:</label>
     <input type="text" name="memory" value="" placeholder="What was memorable about this spot?"><br><br>
     <label for="url">Photo URL:</label>
@@ -30,5 +85,7 @@
     <input type="text" name="category" value="" placeholder="Enter Category"><br><br>
     <input type="hidden" name="longitude" class="longitude">
     <input type="hidden" name="latitude" class="latitude">
+    <input type="hidden" name="city" class="city">
+    <input type="hidden" name="address" class="address">
     <input type="submit" value="Save" class = "submit_btn">
   </form>
