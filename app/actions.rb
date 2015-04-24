@@ -1,6 +1,16 @@
 # Homepage (Root path)
 enable :sessions
 
+get '/' do
+  @memories = Memory.all 
+  erb :'index'
+end
+
+post '/' do
+  @memories = Memory.find_by(city: params[:city_searched])
+  erb :'index' 
+end 
+
 get '/login' do
   erb :'traveller/login_signup'
 end 
@@ -13,23 +23,12 @@ end
 
 post '/signup' do
   @traveller = Traveller.new(
-    email: params[:email]
-    password: params[:password]
-  )
+    email: params[:email],
+    password: params[:password])
   if @traveller.save
     redirect '/'
   else
     erb :'traveller/login_signup'
-end 
-
-get '/' do
-  @memories = Memory.all 
-  erb :'index'
-end
-
-post '/' do
-  @memories = Memory.find_by(city: params[:city_searched])
-  erb :'index' 
 end 
 
 get '/create' do

@@ -1,1 +1,16 @@
-login_signup.erb
+<form method="POST" action="/login">
+    <label for="email">Email:</label>
+    <input type="text" name="email" placeholder="Email"><br><br>
+    <label for="url">Password:</label>
+    <input type="password" name="password" placeholder="Password"><br><br>
+    <input type="submit" value="Save" class ="submit_btn">
+    <input type="submit" value="Logout" class ="submit_btn">
+</form>
+<br>
+<form method="POST" action="/signup">
+    <label for="email">Email:</label>
+    <input type="text" name="email" placeholder="Email"><br><br>
+    <label for="url">Password:</label>
+    <input type="password" name="password" placeholder="Password"><br><br>
+    <input type="submit" value="Signup" class ="submit_btn">
+</form>
