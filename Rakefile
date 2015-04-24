@@ -20,3 +20,15 @@ desc 'Retrieves the current schema version number'
 task "db:version" do
   puts "Current version: #{ActiveRecord::Migrator.current_version}"
 end
+
+# desc 'adds dummy data'
+# task "db:populate" do
+#   traveller.delete_all
+#   traveller.create!()
+#   traveller.create!()
+
+#   memory.delete_all
+#   memory.create!()
+#   memory.create!()
+# end
+

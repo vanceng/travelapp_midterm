@@ -1,4 +1,5 @@
   <script type="text/javascript"> 
+
   navigator.geolocation.getCurrentPosition(show_map);
   function show_map(obj) {
     $('input.latitude').val(obj.coords.latitude);
@@ -15,7 +16,7 @@
   </script>
 
 
-  <form method="POST" action="/memory" class='memory_form'>
+  <form method="POST" action="/memory/create" class='memory_form'>
     <label for="memories">Enter your Memory:</label>
     <input type="text" name="memory" value="" placeholder="What was memorable about this spot?"><br><br>
     <label for="url">Photo URL:</label>

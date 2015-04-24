@@ -31,9 +31,9 @@ post '/signup' do
     erb :'traveller/login_signup'
 end 
 
-get '/create' do
+post '/memory/create' do
   redirect '/' unless session[:id]
-  @memory = Memory.new(
+  @memory = Memory.create(
     traveller_id: session[:id],
     title: params[:title],
     city: params[:city],
@@ -64,18 +64,25 @@ get '/traveller/:id/:city'
   erb :'memory/display'
 end 
 
-post '/selection' do
-  @client = GooglePlaces::Client.new("AIzaSyCoKTsUyTkHVTRQIcDNxZkPrwL-aunhQL4")
+# post '/selection' do
+#   @client = GooglePlaces::Client.new("AIzaSyCoKTsUyTkHVTRQIcDNxZkPrwL-aunhQL4")
 
-  latitude = @location[0].data["latitude"]
-  longitude = @location[0].data["longitude"]
+#   latitude = @location[0].data["latitude"]
+#   longitude = @location[0].data["longitude"]
 
-  @spots = @client.spots(latitude, longitude, :name => @meal, :radius => @radius)
+#   @spots = @client.spots(latitude, longitude, :name => @meal, :radius => @radius)
 
-end
+# end
 
 post '/logout' do
   session.clear 
   redirect '/'
 end 
 
+# json notes
+# product.all.to_json
+# json_products = Product.all.to_json
+# JSON.parse(json_products)
+# json data is always a string - needs to be converted into something we can use, like a hash
+# json_products = JSON.parse(json_products)
+# json_products[0].name
