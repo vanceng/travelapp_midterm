@@ -1,5 +1,5 @@
 # Homepage (Root path)
-enable :sessions
+# enable :sessions
 
 get '/' do
   @memories = Memory.all 
@@ -10,6 +10,8 @@ post '/' do
   @memories = Memory.find_by(city: params[:city_searched])
   erb :'index' 
 end 
+
+
 
 get '/login' do
   erb :'traveller/login_signup'
@@ -29,10 +31,16 @@ post '/signup' do
     redirect '/'
   else
     erb :'traveller/login_signup'
+  end
 end 
 
-post '/create' do
-  redirect '/' unless session[:id]
+get '/memory/create' do
+  # puts "hello"
+  erb :'memory/create'
+end
+
+post '/memory/create' do
+  # redirect '/' unless session[:id]
   @memory = Memory.create(
     traveller_id: session[:id],
     title: params[:title],
@@ -59,7 +67,7 @@ get '/memory/:id' do
   erb :'memory/display'
 end
 
-get '/traveller/:id/:city'
+get '/traveller/:id/:city' do
   @memory = Memory.find(params[:id]).where(city: params[:city])
   erb :'memory/display'
 end 
