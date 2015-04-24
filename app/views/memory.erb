@@ -1,0 +1,28 @@
+  <script type="text/javascript"> 
+  navigator.geolocation.getCurrentPosition(show_map);
+  function show_map(obj) {
+    $('input.latitude').val(obj.coords.latitude);
+    $('input.longitude').val(obj.coords.longitude);
+  }
+
+  $("form.memory_form").submit(function (event) {
+    if ($('input.latitude').val() == "") {
+      alert("You do not have a location!");
+      event.preventDefault();
+    }
+  });
+
+  </script>
+
+
+  <form method="POST" action="/memory" class='memory_form'>
+    <label for="memories">Enter your Memory:</label>
+    <input type="text" name="memory" value="" placeholder="What was memorable about this spot?"><br><br>
+    <label for="url">Photo URL:</label>
+    <input type="text" name="url" value="" placeholder="Add a URL of a photo"><br><br>
+    <label for="category">Enter the category:</label>
+    <input type="text" name="category" value="" placeholder="Enter Category"><br><br>
+    <input type="hidden" name="longitude" class="longitude">
+    <input type="hidden" name="latitude" class="latitude">
+    <input type="submit" value="Save" class = "submit_btn">
+  </form>
