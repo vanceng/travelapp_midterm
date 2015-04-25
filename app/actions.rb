@@ -2,9 +2,7 @@
 # enable :sessions
 
 get '/' do
-  @memories = Memory.all 
-  @memories.to_json
-  # erb :'index'
+  erb :'index'
 end
 
 post '/' do
