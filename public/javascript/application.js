@@ -1,26 +1,44 @@
-function displayMemory(memoryId) {
+function displayMemoryMarker(memoryId) {
   $.ajax({
     url: "/api/memory/"+memoryId,
     success: function(response) {
       console.log(response);
+
+      // Create the coordinate of the memory
       var coords = new google.maps.LatLng(response.latitude, response.longitude);
+
+      // Create and display the map
+      var mapProp = {
+        center: coords,
+        zoom: 15,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+      // Display the markers on the map
       var marker = new google.maps.Marker({
         position: coords,
       });
       marker.setMap(map);
 
-      map.setCenter(coords);
-      map.setZoom(15);
     }
   });
 }
 
+// google.maps.event.addDomListener(window, 'load', initialize);
+
 $(document).ready(function() {
 
-  displayMemory(24);
+  var memoryIds = $(".memories").data("memory-ids");
+  // create the map
+
+  $.each(memoryIds, function(memoryId){
+    displayMemoryMarker(memoryId);
+  });
+  
   // displayUserMemories();
 
-  
+
   // var map;
   // var styles = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
 

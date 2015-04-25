@@ -54,9 +54,7 @@ post '/memory/create' do
     address: params[:address]
     )
     if @temp_memory.save
-      @memory = []
-      @memory << @temp_memory
-      erb :'memory/display'
+      redirect "/memory/"+@temp_memory.id.to_s
     else
       erb :'memory/create'
     end
@@ -68,8 +66,7 @@ get '/traveller/:id' do
 end 
 
 get '/memory/:id' do
-  @memory = []
-  @memory << Memory.find(params[:id])
+  @memory = Memory.where(id: params[:id])
   # @memory = Memory.all 
   erb :'memory/display'
 end
