@@ -6,7 +6,11 @@
    Specific Memory or list of city memories
    <% @memory.each do |memory|%>
 
-   <h1><%= memory.comment %></h1>
+    <h1><%= memory.comment %></h1>
+    <h1><%= memory.title %></h1>
+    <h1 id="memory_lat"><%= memory.latitude %></h1>
+    <h1><%= memory.longitude %></h1>
+    <h1><%= memory.category %></h1>
 
     <img src = <%=memory.photo_url %> >
     <%end%>
@@ -16,6 +20,38 @@
 
    <div style="float:right;">
    Map!
+   <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+
+<script>
+var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+var map;
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:5,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<body>
+<div id="googleMap" style="width:500px;height:380px;"></div>
+</body>
+
+
    </div>
 
 </div>

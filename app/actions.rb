@@ -42,7 +42,7 @@ end
 
 post '/memory/create' do
   # redirect '/' unless session[:id]
-  @memory = Memory.create(
+  @temp_memory = Memory.new(
     traveller_id: session[:id],
     title: params[:title],
     photo_url: params[:photo_url],
@@ -53,7 +53,9 @@ post '/memory/create' do
     # city: some_method(params[:city]),
     address: params[:address]
     )
-    if @memory.save
+    if @temp_memory.save
+      @memory = []
+      @memory << @temp_memory
       erb :'memory/display'
     else
       erb :'memory/create'
@@ -70,6 +72,18 @@ get '/memory/:id' do
   @memory << Memory.find(params[:id])
   # @memory = Memory.all 
   erb :'memory/display'
+end
+
+get '/api/memory/:id' do
+  @memory = Memory.find(params[:id])
+  content_type :json
+  @memory.to_json
+end
+
+get '/api/batch/:user_id' do
+  @memory = Memory.find(params[:id])
+  content_type :json
+  @memory.to_json
 end
 
 get '/traveller/:id/:city' do
