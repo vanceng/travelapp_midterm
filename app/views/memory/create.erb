@@ -58,9 +58,12 @@ function generateMap() {
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
+    // debugger 
     for (var i = 0; i < results.length; i++) {
       console.log(results[i]["vicinity"]);
-      $('input.address').val(results[i]["vicinity"]);
+      $('input.place_id').val(results[i]["place_id"]);
+      $('input.city').val(results[i]["vicinity"]);
+
     // $('input.longitude').val(obj.coords.longitude);
     }
   }
@@ -82,7 +85,7 @@ function callback(results, status) {
     <input type="text" name="category" value="" placeholder="Enter Category"><br><br>
     <input type="hidden" name="longitude" class="longitude">
     <input type="hidden" name="latitude" class="latitude">
-    <input type="hidden" name="city" class="cityname">
-    <input type="hidden" name="address" class="address">
+    <input type="hidden" name="city" class="city">
+    <input type="hidden" name="address" class="place_id">
     <input type="submit" value="Save" class = "submit_btn">
   </form>

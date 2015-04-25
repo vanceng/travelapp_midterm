@@ -50,7 +50,7 @@ post '/memory/create' do
     category: params[:category],
     latitude: params[:latitude],
     longitude: params[:longitude],
-    # city: some_method(params[:city]),
+    city: params[:city],
     address: params[:address]
     )
     if @temp_memory.save
@@ -66,15 +66,15 @@ get '/traveller/:id' do
 end 
 
 get '/memory/:id' do
-  @memory = Memory.where(id: params[:id])
+  @memories = Memory.where(id: params[:id])
   # @memory = Memory.all 
   erb :'memory/display'
 end
 
 get '/api/memory/:id' do
-  @memory = Memory.find(params[:id])
+  @memories = Memory.find(params[:id])
   content_type :json
-  @memory.to_json
+  @memories.to_json
 end
 
 get '/api/batch/:user_id' do
@@ -84,7 +84,7 @@ get '/api/batch/:user_id' do
 end
 
 get '/traveller/:id/:city' do
-  @memory = Memory.where(traveller_id: params[:id], city: params[:city])
+  @memories = Memory.where(traveller_id: params[:id], city: params[:city])
   erb :'memory/display'
 end 
 

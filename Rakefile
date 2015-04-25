@@ -24,8 +24,8 @@ end
 desc 'adds dummy data'
 task "db:populate" do
   Memory.delete_all
-  Memory.create!(traveller_id: 1,city: "Vancouver", comment: "Best Coffee shop", category: "food", photo_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/200px-Ruby_logo.svg.png")
-  Memory.create!(traveller_id: 1,city: "Vancouver", comment: "Best Donair shop", category: "food", photo_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/200px-Ruby_logo.svg.png")
+  Memory.create!(traveller_id: 1,city: "Vancouver", comment: "Best Coffee shop", category: "food", photo_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/200px-Ruby_logo.svg.png", latitude: 49.2820567, longitude: -123.1082302)
+  Memory.create!(traveller_id: 1,city: "Vancouver", comment: "Best Donair shop", category: "food", photo_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/200px-Ruby_logo.svg.png", latitude: 49.300815, longitude: -123.130837)
   Memory.create!(traveller_id: 3,city: "Toronto",comment: "Best Burger shop", category: "food", photo_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/200px-Ruby_logo.svg.png")
 end
 
