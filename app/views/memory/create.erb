@@ -1,18 +1,15 @@
-  <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?libraries=places,key=AIzaSyCoKTsUyTkHVTRQIcDNxZkPrwL-aunhQL4">
-    </script>
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?libraries=places,key=AIzaSyCoKTsUyTkHVTRQIcDNxZkPrwL-aunhQL4">
+</script>
 
-  <style type="text/css">
-    html, body { height: 100%; margin: 0; padding: 0;}
+<style type="text/css">
+  html, body { height: 100%; margin: 0; padding: 0;}
+  #map-canvas { height: 300px; width: 300px;}
+</style>
 
-    #map-canvas { height: 300px; width: 300px;}
-  </style>
-
-
-  <script type="text/javascript"> 
+<script type="text/javascript"> 
 
   var coordinates = {lat: 0, lon: 0}; 
-
 
   navigator.geolocation.getCurrentPosition(set_coordinates);
   function set_coordinates(obj) {
@@ -20,6 +17,7 @@
     coordinates.lon = obj.coords.longitude;
     $('input.latitude').val(obj.coords.latitude);
     $('input.longitude').val(obj.coords.longitude);
+    debugger
     generateMap();
   }
 
@@ -31,14 +29,11 @@
 
   });
 
-
-
 var map;
 var service;
 var infowindow;
 
 function generateMap() {
-    // debugger;
   var place_name = new google.maps.LatLng(coordinates.lat, coordinates.lon);
 
   map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -71,10 +66,10 @@ function callback(results, status) {
 
 // google.maps.event.addDomListener(window, 'load', generateMap);
 
-  </script>
-<div id="map-canvas"></div>
 
-  </script>
+</script>
+
+  <div class="memory_create">
 
   <form method="POST" action="/memory/create" class='memory_form'>
     <label for="memories">Enter your Memory:</label>
@@ -82,10 +77,22 @@ function callback(results, status) {
     <label for="url">Photo URL:</label>
     <input type="text" name="url" value="" placeholder="Add a URL of a photo"><br><br>
     <label for="category">Enter the category:</label>
-    <input type="text" name="category" value="" placeholder="Enter Category"><br><br>
+
+<!--     <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" name="category"> Categories <span class="caret"></span>
+        </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Food</a></li>
+            <li><a href="#">View</a></li>
+            <li><a href="#">Landmark</a></li>
+            <li><a href="#">Venue</a></li>
+          </ul>
+        </div><br><br> -->
+
     <input type="hidden" name="longitude" class="longitude">
     <input type="hidden" name="latitude" class="latitude">
     <input type="hidden" name="city" class="city">
     <input type="hidden" name="address" class="place_id">
     <input type="submit" value="Save" class = "submit_btn">
   </form>
+  </div>
