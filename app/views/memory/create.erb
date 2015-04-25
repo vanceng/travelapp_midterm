@@ -18,14 +18,9 @@
   function set_coordinates(obj) {
     coordinates.lat = obj.coords.latitude;
     coordinates.lon = obj.coords.longitude;
-    generateMap();
-  }
-
-  
-  function show_map(obj) {
-    // debugger;
     $('input.latitude').val(obj.coords.latitude);
     $('input.longitude').val(obj.coords.longitude);
+    generateMap();
   }
 
   $("form.memory_form").submit(function (event) {
@@ -33,6 +28,7 @@
       alert("You do not have a location!");
       event.preventDefault();
     }
+
   });
 
 
@@ -49,11 +45,10 @@ function generateMap() {
       center: { lat: coordinates.lat, lng: coordinates.lon},
       zoom: 15
     });
-
   var request = {
     location: place_name,
-    // radius: '500',
-    rankBy: google.maps.places.RankBy.DISTANCE,
+    radius: '5',
+    // rankBy: google.maps.places.RankBy.DISTANCE,
     // types: ['store']
   };
 
@@ -64,7 +59,9 @@ function generateMap() {
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
-      debugger;
+      console.log(results[i]["vicinity"]);
+      $('input.address').val(results[i]["vicinity"]);
+    // $('input.longitude').val(obj.coords.longitude);
     }
   }
 }
@@ -85,7 +82,7 @@ function callback(results, status) {
     <input type="text" name="category" value="" placeholder="Enter Category"><br><br>
     <input type="hidden" name="longitude" class="longitude">
     <input type="hidden" name="latitude" class="latitude">
-    <input type="hidden" name="city" class="city">
+    <input type="hidden" name="city" class="cityname">
     <input type="hidden" name="address" class="address">
     <input type="submit" value="Save" class = "submit_btn">
   </form>

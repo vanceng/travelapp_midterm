@@ -46,11 +46,13 @@ post '/memory/create' do
   @memory = Memory.create(
     traveller_id: session[:id],
     title: params[:title],
-    city: params[:city],
+    photo_url: params[:photo_url],
     comment: params[:comment],
     category: params[:category],
     latitude: params[:latitude],
-    longitude: params[:longitude]
+    longitude: params[:longitude],
+    # city: some_method(params[:city]),
+    address: params[:address]
     )
     if @memory.save
       erb :'memory/display'
