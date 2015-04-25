@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20140423145407) do
   create_table "memories", force: true do |t|
     t.integer  "traveller_id"
     t.string   "title"
-    t.text     "photo_url"
+    t.string   "photo_url"
     t.string   "comment"
     t.string   "category"
     t.string   "latitude"
