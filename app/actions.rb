@@ -77,25 +77,7 @@ get '/traveller/:id/:city' do
   erb :'memory/display'
 end 
 
-# post '/map' do
-#   @client = GooglePlaces::Client.new("AIzaSyCoKTsUyTkHVTRQIcDNxZkPrwL-aunhQL4")
-
-#   latitude = @memory[:latitude]
-#   longitude = @memory[:longitude]
-
-#   @spots = @client.spots(latitude, longitude)
-
-# end
-
 post '/logout' do
   session.clear 
   redirect '/'
 end 
-
-# json notes
-# product.all.to_json
-# json_products = Product.all.to_json
-# JSON.parse(json_products)
-# json data is always a string - needs to be converted into something we can use, like a hash
-# json_products = JSON.parse(json_products)
-# json_products[0].name

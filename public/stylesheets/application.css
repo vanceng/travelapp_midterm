@@ -15,3 +15,54 @@ body {
     margin: 10px;
     float: left;
 }
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.row {
+ -moz-column-width: 18em;
+ -webkit-column-width: 18em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap:1em; 
+  
+}
+
+.item {
+ display: inline-block;
+ padding:  .25rem;
+ width:  100%; 
+}
+
+.well {
+ position:relative;
+ display: block;
+}
+
+.city_photo {
+    position:relative;
+}
+
+form.search_bar{
+    width: 200px;
+    margin: auto;
+    background: #eee;
+    text-align: center;
+}
+
+.navbar-brand{
+    }
+
+.dropdown{
+    float: right;
+    line-height: 50px;
+    margin: 5px;
+}
+
+.memory_create{
+    width: 600px;
+    padding: 10px;  
+    margin: auto;
+    background: #eee;
+    text-align: center;
+}
+

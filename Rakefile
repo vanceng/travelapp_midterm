@@ -23,14 +23,23 @@ end
 
 desc 'adds dummy data'
 task "db:populate" do
-  # traveller.delete_all
-  # traveller.create!()
-  # traveller.create!()
-
+  Traveller.delete_all
+  Traveller.create!(email: "sarah@sarah.com", password: "password")
+  Traveller.create!(email: "vance@vance.com", password: "password")
+  Traveller.create!(email: "sakthi@sakthi.com", password: "password")
+  
   Memory.delete_all
-  Memory.create!(traveller_id: 1,city: "Vancouver", comment: "Best Coffee shop", category: "food", photo_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/200px-Ruby_logo.svg.png")
-  Memory.create!(traveller_id: 1,city: "Vancouver", comment: "Best Donair shop", category: "food", photo_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/200px-Ruby_logo.svg.png")
-  Memory.create!(traveller_id: 3,city: "Toronto",comment: "Best Burger shop", category: "food", photo_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/200px-Ruby_logo.svg.png")
-  # Memory.create!()
+  Memory.create!(traveller_id: 1,city: "Vancouver", comment: "The Steamclock rings on the hour. An icon of Gastown.", category: "landmark", photo_url: "./img/city/vancouver.jpg")
+  Memory.create!(traveller_id: 1,city: "Vancouver", comment: "This Coffee was one of the best I ever had.", category: "food", photo_url: "./img/city/vancouver2.jpg")
+  Memory.create!(traveller_id: 1,city: "Vancouver",comment: "Walking in Lynn canyon felt like I was in a land forgotten by time.", category: "nature", photo_url: "./img/city/paris.jpg")
+  Memory.create!(traveller_id: 1,city: "Vancouver",comment: "The view from the float plane was incredible!", category: "view", photo_url: "./img/city/paris.jpg")
+  Memory.create!(traveller_id: 1,city: "Goa",comment: "The beaches were unlike anything I have ever seen. Try a Mango Lassi from a local vendor!", category: "view", photo_url: "./img/city/goa.jpg")
+  Memory.create!(traveller_id: 1,city: "Goa",comment: "Watching the sun set over the water sent chills through my body.", category: "view", photo_url: "./img/city/goa2.jpg")
+  Memory.create!(traveller_id: 1,city: "Goa",comment: "These caves reminded me of something out of a movie.", category: "nature", photo_url: "./img/city/goa3.jpg")
+  Memory.create!(traveller_id: 2,city: "Paris",comment: "I loved this view of the Tour Eiffel.", category: "landmark", photo_url: "./img/city/paris.jpg")
+  Memory.create!(traveller_id: 2,city: "Paris",comment: "Magical memories created with my children riding this carousel.", category: "activity", photo_url: "./img/city/paris.jpg")
+  Memory.create!(traveller_id: 2,city: "Paris",comment: "I couldn't believe the traffic around the Arc de Triompe!", category: "landmark", photo_url: "./img/city/paris.jpg")
+  Memory.create!(traveller_id: 3,city: "Geneva",comment: "The Alps, what a view!", category: "view", photo_url: "./img/city/paris.jpg")
+  Memory.create!(traveller_id: 3,city: "Geneva",comment: "This etching is such an amazing feat of engineering!", category: "landmark", photo_url: "./img/city/paris.jpg")
 end
 

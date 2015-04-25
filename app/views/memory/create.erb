@@ -69,9 +69,11 @@ function callback(results, status) {
 // google.maps.event.addDomListener(window, 'load', generateMap);
 
   </script>
-<div id="map-canvas"></div>
+<!-- <div id="map-canvas"></div> -->
 
   </script>
+
+  <div class="memory_create">
 
   <form method="POST" action="/memory/create" class='memory_form'>
     <label for="memories">Enter your Memory:</label>
@@ -79,10 +81,22 @@ function callback(results, status) {
     <label for="url">Photo URL:</label>
     <input type="text" name="url" value="" placeholder="Add a URL of a photo"><br><br>
     <label for="category">Enter the category:</label>
-    <input type="text" name="category" value="" placeholder="Enter Category"><br><br>
+
+    <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" name="category"> Categories <span class="caret"></span>
+        </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Food</a></li>
+            <li><a href="#">View</a></li>
+            <li><a href="#">Landmark</a></li>
+            <li><a href="#">Venue</a></li>
+          </ul>
+        </div><br><br>
+
     <input type="hidden" name="longitude" class="longitude">
     <input type="hidden" name="latitude" class="latitude">
     <input type="hidden" name="city" class="cityname">
     <input type="hidden" name="address" class="address">
     <input type="submit" value="Save" class = "submit_btn">
   </form>
+  </div>
