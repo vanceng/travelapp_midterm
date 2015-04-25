@@ -10,7 +10,7 @@ class CreateMemories < ActiveRecord::Migration
     create_table :memories do |t|
       t.integer :traveller_id
       t.string :title
-      t.string :photo_url
+      t.text :photo_url
       t.string :comment
       t.string :category
       t.string :latitude

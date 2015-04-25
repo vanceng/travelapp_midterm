@@ -1,111 +1,29 @@
-<div class=" item masonry-brick">
-    <div class="picture">
-      <a class="image" title="Title" href="#">
-      <img alt="" src="./img/image_07.jpg">
-    </a>
-    <div class="item-content">
-      <div class="description">
-        <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
-      </div>
-      <div class="author"> - John White - </div>
-      <div class="meta">
-        <span>
-          <i class="icon-calendar"></i>
-          11 May 2013
-        </span>
-        <span>
-          <i class="icon-user"></i>
-          <a href="#">John</a>
-        </span>
-        <span>
-            <i class="icon-heart-empty"></i>
-          10
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class=" item masonry-brick">
-    <div class="picture">
-      <a class="image" title="Title" href="#">
-      <img alt="" src="img/city/vancouver.jpg">
-    </a>
-    <div class="item-content">
-      <div class="description">
-        <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
-      </div>
-      <div class="author"> - John White - </div>
-      <div class="meta">
-        <span>
-          <i class="icon-calendar"></i>
-          11 May 2013
-        </span>
-        <span>
-          <i class="icon-user"></i>
-          <a href="#">John</a>
-        </span>
-        <span>
-            <i class="icon-heart-empty"></i>
-          10
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
+<h1 class="">Home Page</h1>
+<div style="width: 100%;">
+   <div style="float:left; width: 80%">
+   List of Shit
+   <form method="POST" action="/">
+    <input type="text" name="city" placeholder="city"><br><br>
+    <input type="text" name="category" placeholder="category"><br><br>
+    <input type="submit" value="search" class ="submit_btn">
+</form>
 
-<div class=" item masonry-brick">
-    <div class="picture">
-      <a class="image" title="Title" href="#">
-      <img alt="" src="img/city/vancouver2.jpg">
-    </a>
-    <div class="item-content">
-      <div class="description">
-        <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
-      </div>
-      <div class="author"> - John White - </div>
-      <div class="meta">
-        <span>
-          <i class="icon-calendar"></i>
-          11 May 2013
-        </span>
-        <span>
-          <i class="icon-user"></i>
-          <a href="#">John</a>
-        </span>
-        <span>
-            <i class="icon-heart-empty"></i>
-          10
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
+   </div>
+   <div style="float:right;">
+    <% @memories.each do |memory|%>
 
-<div class=" item masonry-brick">
-    <div class="picture">
-      <a class="image" title="Title" href="#">
-      <img alt="" src="img/city/vancouver3.jpg">
-    </a>
-    <div class="item-content">
-      <div class="description">
-        <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
-      </div>
-      <div class="author"> - John White - </div>
-      <div class="meta">
-        <span>
-          <i class="icon-calendar"></i>
-          11 May 2013
-        </span>
-        <span>
-          <i class="icon-user"></i>
-          <a href="#">John</a>
-        </span>
-        <span>
-            <i class="icon-heart-empty"></i>
-          10
-        </span>
-      </div>
-    </div>
-  </div>
+
+   <h1><%= memory.city %></h1>
+   <h3>memories made <%= memory.created_at %></h3>
+
+
+    <img src = <%=memory.photo_url %> >
+    <%end%>
+   </div>
+   <div style="float:right;">
+   Map!
+   </div>
 </div>
+<div style="clear:both"></div>
+

@@ -1,12 +1,13 @@
 # Homepage (Root path)
-# enable :sessions
+enable :sessions
 
 get '/' do
+  @memories = Memory.limit(10).group("city")
   erb :'index'
 end
 
 post '/' do
-  @memories = Memory.find_by(city: params[:city_searched])
+  @memories = Memory.where(city: params[:city], category: params[:category])
   erb :'index' 
 end 
 
@@ -44,11 +45,13 @@ post '/memory/create' do
   @memory = Memory.create(
     traveller_id: session[:id],
     title: params[:title],
-    city: params[:city],
+    photo_url: params[:photo_url],
     comment: params[:comment],
     category: params[:category],
     latitude: params[:latitude],
-    longitude: params[:longitude]
+    longitude: params[:longitude],
+    # city: some_method(params[:city]),
+    address: params[:address]
     )
     if @memory.save
       erb :'memory/display'
@@ -58,17 +61,19 @@ post '/memory/create' do
 end
 
 get '/traveller/:id' do
-  @memory = Traveller.find(params[:id])
+  @memory = Memory.where(traveller_id: params[:id]).group("city") 
   erb :'memory/traveller'
 end 
 
 get '/memory/:id' do
-  @memory = Memory.find(params[:id])
+  @memory = []
+  @memory << Memory.find(params[:id])
+  # @memory = Memory.all 
   erb :'memory/display'
 end
 
 get '/traveller/:id/:city' do
-  @memory = Memory.find(params[:id]).where(city: params[:city])
+  @memory = Memory.where(traveller_id: params[:id], city: params[:city])
   erb :'memory/display'
 end 
 
