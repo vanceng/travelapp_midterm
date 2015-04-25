@@ -2,6 +2,23 @@
 <div style="width: 100%;">
    <div style="float:left; width: 80%">
    List of Shit
+   <form method="POST" action="/">
+    <input type="text" name="city" placeholder="city"><br><br>
+    <input type="text" name="category" placeholder="category"><br><br>
+    <input type="submit" value="search" class ="submit_btn">
+</form>
+
+   </div>
+   <div style="float:right;">
+    <% @memories.each do |memory|%>
+
+
+   <h1><%= memory.city %></h1>
+   <h3>memories made <%= memory.created_at %></h3>
+
+
+    <img src = <%=memory.photo_url %> >
+    <%end%>
    </div>
    <div style="float:right;">
    Map!

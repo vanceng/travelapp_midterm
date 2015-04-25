@@ -4,6 +4,16 @@
    Cities
    </div>
    <div style="float:right;">
+    <% @memory.each do |memory|%>
+
+
+   <h1><%= memory.city %></h1>
+   <h3>memories made <%= memory.created_at %></h3>
+
+
+    <img src = <%=memory.photo_url %> >
+    <%end%>
+   </div>
    Map!
    </div>
 </div>
