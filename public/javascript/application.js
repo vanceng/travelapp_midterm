@@ -10,8 +10,10 @@ $(document).ready(function() {
         var coords = new google.maps.LatLng(response.latitude, response.longitude);
         var time = response.created_at
 
+
         // document.querySelector('.map_box').innerHTML = response.created_at;
         // $('.map_box').html(response.created_at);
+
 
         // Create and display the map
         var contentString = '<div id="content">'+
@@ -19,7 +21,10 @@ $(document).ready(function() {
           '</div>'+
           //'<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
           '<div id="bodyContent">'+
+          '<p><b>time</b></p>'+
+
           '<p class="map_box"><b> Hello??</b></p>'+
+
           '</div>'+
           '</div>';
 
