@@ -77,12 +77,6 @@ get '/api/memory/:id' do
   @memories.to_json
 end
 
-get '/api/batch/:user_id' do
-  @memory = Memory.find(params[:id])
-  content_type :json
-  @memory.to_json
-end
-
 get '/traveller/:id/:city' do
   @memories = Memory.where(traveller_id: params[:id], city: params[:city])
   erb :'memory/display'

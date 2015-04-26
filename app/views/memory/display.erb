@@ -1,9 +1,10 @@
 <h1 class="">Specific Memory/City</h1>
 <div style="width: 100%;">
 
-   <div class="memories" style="float:left; width: 80%" data-memory-ids="<%= @memories.pluck(:id).to_json %>">
+  <div class="memories" style="float:left; width: 80%" data-memory-ids="<%= @memories.pluck(:id).to_json %>">
 
     Specific Memory or list of city memories
+
     <% @memories.each do |memory|%>
       <h1><%= memory.comment %></h1>
       <h1><%= memory.title %></h1>
@@ -14,7 +15,7 @@
       <img src = <%=memory.photo_url %> >
     <%end%>
 
-   </div>
+  </div>
 
    <div style="float:right;">
     Map!
@@ -24,4 +25,6 @@
 
 </div>
 
-<div style="clear:both"></div>
+
+
+
