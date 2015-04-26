@@ -15,7 +15,7 @@ $(document).ready(function() {
           '</div>'+
           //'<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
           '<div id="bodyContent">'+
-          '<p><b>Hello</b></p>'+
+          '<p><b>#{response.created_at}Hello??</b></p>'+
           '</div>'+
           '</div>';
 
@@ -27,7 +27,7 @@ $(document).ready(function() {
         // Display the markers on the map
         var marker = new google.maps.Marker({
           position: coords,
-          //animation:google.maps.Animation.BOUNCE
+          animation:google.maps.Animation.BOUNCE
         });
         marker.setMap(map);
 
@@ -164,7 +164,7 @@ $(document).ready(function() {
 
   var mapProp = {
     center: new google.maps.LatLng(49.282022399999995, -123.108199),
-    zoom: 15,
+    zoom: 3,
     mapTypeId:google.maps.MapTypeId.ROADMAP,
     styles: styles
   };
