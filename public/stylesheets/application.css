@@ -45,7 +45,7 @@ body {
     display: block;
 }
 
-.memory_image {
+img.memory_image {
     position:relative;
     max-width: 90%;
     height: auto;
