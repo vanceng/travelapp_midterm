@@ -9,13 +9,17 @@ $(document).ready(function() {
         // Create the coordinate of the memory
         var coords = new google.maps.LatLng(response.latitude, response.longitude);
         var time = response.created_at
+
+        // document.querySelector('.map_box').innerHTML = response.created_at;
+        // $('.map_box').html(response.created_at);
+
         // Create and display the map
         var contentString = '<div id="content">'+
           '<div id="siteNotice">'+
           '</div>'+
           //'<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
           '<div id="bodyContent">'+
-          '<p><b>Hello</b></p>'+
+          '<p class="map_box"><b> Hello??</b></p>'+
           '</div>'+
           '</div>';
 
@@ -30,7 +34,11 @@ $(document).ready(function() {
 
         var marker = new google.maps.Marker({
           position: coords,
+
+          animation:google.maps.Animation.BOUNCE
+
         });
+        
         marker.setMap(map);
 
 
@@ -166,7 +174,7 @@ $(document).ready(function() {
 
   var mapProp = {
     center: new google.maps.LatLng(49.282022399999995, -123.108199),
-    zoom: 15,
+    zoom: 3,
     mapTypeId:google.maps.MapTypeId.ROADMAP,
     styles: styles
   };

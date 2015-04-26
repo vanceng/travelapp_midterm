@@ -5,27 +5,23 @@
 
     Specific Memory or list of city memories
 
+    <% @memories.each do |memory|%>
+      <h1><%= memory.comment %></h1>
+      <h1><%= memory.title %></h1>
+      <h1><%= memory.latitude %></h1>
+      <h1><%= memory.longitude %></h1>
+      <h1><%= memory.category %></h1>
+      <h1><%= memory.created_at.strftime("%A, %d %B %Y - %I.%M %p") %></h1>
+      <img src = <%=memory.photo_url %> >
+    <%end%>
 
-      <% @memories.each do |memory|%>
-        <div class = "memory_block">
-          <h1><%= memory.comment %></h1>
-          <h1><%= memory.title %></h1>
-          <h1><%= memory.latitude %></h1>
-          <h1><%= memory.longitude %></h1>
-          <h1><%= memory.category %></h1>
-          <img src = <%=memory.photo_url%>
-        </div>
-        </div>
-         <br></br>
-      <%end%>
-    
 
   </div>
 
    <div style="float:right;">
     Map!
     <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <div id="googleMap" style="width:500px;height:380px;"></div>
+    <div id="googleMap" style="width:500px;height:1000px;"></div>
    </div>
 
 </div>
