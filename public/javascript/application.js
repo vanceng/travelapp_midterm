@@ -12,9 +12,19 @@ $(document).ready(function() {
         // Create and display the map
 
         // Display the markers on the map
+        
+        var image = new google.maps.MarkerImage(
+            '../img/templogo.png', //url
+            new google.maps.Size(width, height), //size
+            new google.maps.Point(0,0), //origin
+            new google.maps.Point(anchor_left, anchor_top) //anchor 
+    );
+
+
         var marker = new google.maps.Marker({
           position: coords,
-          animation:google.maps.Animation.BOUNCE
+          // animation:google.maps.Animation.BOUNCE,
+          icon: image
         });
         marker.setMap(map);
 
