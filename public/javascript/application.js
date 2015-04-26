@@ -174,7 +174,7 @@ $(document).ready(function() {
 
   var mapProp = {
     center: new google.maps.LatLng(49.282022399999995, -123.108199),
-    zoom: 3,
+    zoom: 15,
     mapTypeId:google.maps.MapTypeId.ROADMAP,
     styles: styles
   };
