@@ -2,7 +2,7 @@
 enable :sessions
 
 get '/' do
-  @memories = Memory.limit(10).group("city")
+  @memories = Memory.all
   erb :'index'
 end
 
@@ -42,7 +42,7 @@ end
 
 post '/memory/create' do
   # redirect '/' unless session[:id]
-  @memory = Memory.create(
+  @temp_memory = Memory.new(
     traveller_id: session[:id],
     title: params[:title],
     photo_url: params[:photo_url],
@@ -50,11 +50,11 @@ post '/memory/create' do
     category: params[:category],
     latitude: params[:latitude],
     longitude: params[:longitude],
-    # city: some_method(params[:city]),
+    city: params[:city],
     address: params[:address]
     )
-    if @memory.save
-      erb :'memory/display'
+    if @temp_memory.save
+      redirect "/memory/"+@temp_memory.id.to_s
     else
       erb :'memory/create'
     end
@@ -66,14 +66,25 @@ get '/traveller/:id' do
 end 
 
 get '/memory/:id' do
-  @memory = []
-  @memory << Memory.find(params[:id])
+  @memories = Memory.where(id: params[:id])
   # @memory = Memory.all 
   erb :'memory/display'
 end
 
+get '/api/memory/:id' do
+  @memories = Memory.find(params[:id])
+  content_type :json
+  @memories.to_json
+end
+
+get '/api/batch/:user_id' do
+  @memory = Memory.find(params[:id])
+  content_type :json
+  @memory.to_json
+end
+
 get '/traveller/:id/:city' do
-  @memory = Memory.where(traveller_id: params[:id], city: params[:city])
+  @memories = Memory.where(traveller_id: params[:id], city: params[:city])
   erb :'memory/display'
 end 
 

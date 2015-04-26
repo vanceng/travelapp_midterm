@@ -23,6 +23,7 @@ end
 
 desc 'adds dummy data'
 task "db:populate" do
+
   Traveller.delete_all
   Traveller.create!(email: "sarah@sarah.com", password: "password")
   Traveller.create!(email: "vance@vance.com", password: "password")
