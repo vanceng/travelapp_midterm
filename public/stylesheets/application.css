@@ -1,6 +1,6 @@
 body {
   color: grey;
-  margin: 20px;
+  padding-top: 60px;
   background: -webkit-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* Chrome 10+, Saf5.1+ */
   background:    -moz-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* FF3.6+ */
   background:     -ms-linear-gradient(90deg, #abbaab 10%, #ffffff 90%); /* IE10 */
@@ -88,6 +88,7 @@ h1 {
 
 .memory_block{
 background: #eee;
+padding-top: 80px;
 }
 
 .jumbotron{
@@ -115,6 +116,7 @@ float: right;
 position: fixed;
 top: 50px;
 right: 0;
+padding-top: 10px;
 }
 
 .google_map{
@@ -126,4 +128,12 @@ div.well{
     background-image: url(../img/envelope.png);
     background-size: 100% 100%;
     border-radius: 25px;
+}
+
+.city_title{
+    position: fixed;
+    left: 0;
+    top: 60px;
+    background: white;
+    width: 50%;
 }

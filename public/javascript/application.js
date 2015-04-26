@@ -1,3 +1,5 @@
+var map;
+
 $(document).ready(function() {
 
   function displayMemoryMarker(memoryId) {
@@ -9,7 +11,9 @@ $(document).ready(function() {
         // Create the coordinate of the memory
         var coords = new google.maps.LatLng(response.latitude, response.longitude);
         var time = response.created_at
-
+        var bounds = map.getBounds();
+        bounds.extend(coords);
+        map.fitBounds(bounds);
 
         // document.querySelector('.map_box').innerHTML = response.created_at;
         // $('.map_box').html(response.created_at);
@@ -23,7 +27,7 @@ $(document).ready(function() {
           '<div id="bodyContent">'+
           '<p><b>time</b></p>'+
 
-          '<p class="map_box"><b> Hello??</b></p>'+
+          '<p class="map_box"><b>'+response.created_at+'</b></p>'+
 
           '</div>'+
           '</div>';
@@ -183,7 +187,7 @@ $(document).ready(function() {
     mapTypeId:google.maps.MapTypeId.ROADMAP,
     styles: styles
   };
-  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
   $.each(memoryIds, function(index, memoryId){
     displayMemoryMarker(memoryId);
