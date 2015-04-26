@@ -73,5 +73,10 @@ form.search_bar{
     margin: auto;
     background: #eee;
     text-align: center;
+    background-color: #b0c4de;
+    opacity: 0.5;
+}
+.memory_form .memory_form{
+    opacity:1;
 }
 
