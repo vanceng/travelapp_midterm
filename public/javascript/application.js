@@ -9,13 +9,14 @@ $(document).ready(function() {
         // Create the coordinate of the memory
         var coords = new google.maps.LatLng(response.latitude, response.longitude);
         var time = response.created_at
+        //debugger
         // Create and display the map
         var contentString = '<div id="content">'+
           '<div id="siteNotice">'+
           '</div>'+
           //'<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
           '<div id="bodyContent">'+
-          '<p><b>#{response.created_at}Hello??</b></p>'+
+          '<p><b>time</b></p>'+
           '</div>'+
           '</div>';
 
