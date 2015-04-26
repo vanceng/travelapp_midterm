@@ -1,30 +1,41 @@
-<h1 class="">Specific Memory/City</h1>
-<div style="width: 100%;">
+<div class="memories_leftdisplay" data-memory-ids="<%= @memories.pluck(:id).to_json %>">
 
-  <div class="memories" style="float:left; width: 80%" data-memory-ids="<%= @memories.pluck(:id).to_json %>">
+  <h1><%= @memories[0].city %></h1>
 
-    Specific Memory or list of city memories
-
-    <% @memories.each do |memory|%>
-      <h1><%= memory.comment %></h1>
-      <h1><%= memory.title %></h1>
-      <h1><%= memory.latitude %></h1>
-      <h1><%= memory.longitude %></h1>
-      <h1><%= memory.category %></h1>
-      <h1><%= memory.created_at.strftime("%A, %d %B %Y - %I.%M %p") %></h1>
-      <img src = <%=memory.photo_url %> >
-    <%end%>
-
-  </div>
-
-   <div style="float:right;">
-    Map!
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <div id="googleMap" style="width:500px;height:1000px;"></div>
-   </div>
+  Specific Memory or list of city memories
+  <% @memories.each do |memory|%>
+    <h1><%= memory.comment %></h1>
+    <h1><%= memory.title %></h1>
+    <h1><%= memory.latitude %></h1>
+    <h1><%= memory.longitude %></h1>
+    <h1><%= memory.category %></h1>
+    <h1><%= memory.created_at.strftime("%A, %d %B %Y at %I.%M %p") %></h1>
+    <img src = <%=memory.photo_url %> >
+  <%end%>
 
 </div>
 
+
+
+
+
+
+
+
+
+
+<div class="map_rightdisplay">
+
+  <script src="http://maps.googleapis.com/maps/api/js">
+  </script>
+
+  <div id="googleMap" class= "google_map"> 
+  </div>
+
+</div>
+
+
+<!-- style="float:right;" -->
 
 
 
