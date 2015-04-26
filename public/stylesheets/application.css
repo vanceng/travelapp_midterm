@@ -45,7 +45,7 @@ body {
     display: block;
 }
 
-img {
+.memory_image {
     position:relative;
     max-width: 90%;
     height: auto;
@@ -97,6 +97,7 @@ background: #eee;
     color: white;
     text-shadow: black 0.3em 0.3em 0.3em;
     margin: 10px;
+    margin-top: 60px;
 }
 
 .memories_leftdisplay{
@@ -119,3 +120,8 @@ width: 100%;
 height: 800px;
 }
 
+div.well{
+    background-image: url(../img/envelope.png);
+    background-size: 100% 100%;
+    border-radius: 25px;
+}
