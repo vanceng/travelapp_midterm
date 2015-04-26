@@ -1,6 +1,6 @@
 <div class="memories_leftdisplay" data-memory-ids="<%= @memories.pluck(:id).to_json %>">
-
-  <h1><%= @memories[0].city %></h1>
+<div style="width: 100%;">   +
+ <h1><%= @memories[0].city %></h1>
 
   Specific Memory or list of city memories
   <% @memories.each do |memory|%>
@@ -10,17 +10,10 @@
     <h1><%= memory.longitude %></h1>
     <h1><%= memory.category %></h1>
     <h1><%= memory.created_at.strftime("%A, %d %B %Y at %I.%M %p") %></h1>
-    <img src = <%=memory.photo_url %> >
+    <img class="memory_image" src = <%=memory.photo_url %> >
   <%end%>
 
 </div>
-
-
-
-
-
-
-
 
 
 
@@ -33,6 +26,8 @@
   </div>
 
 </div>
+
+
 
 
 <!-- style="float:right;" -->
