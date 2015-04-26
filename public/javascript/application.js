@@ -184,4 +184,12 @@ $(document).ready(function() {
     displayMemoryMarker(memoryId);
   });
 
+  $(function(){
+     $('#memory_display').masonry({
+          // options
+      itemSelector : '.memory_square',
+      columnWidth : 240
+     });
+});
+
 });
