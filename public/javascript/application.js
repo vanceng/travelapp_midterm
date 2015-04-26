@@ -25,10 +25,16 @@ $(document).ready(function() {
 
     
         // Display the markers on the map
+      
+
+
         var marker = new google.maps.Marker({
           position: coords,
+
           animation:google.maps.Animation.BOUNCE
+
         });
+        
         marker.setMap(map);
 
 
