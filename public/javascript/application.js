@@ -193,8 +193,6 @@
     displayMemoryMarker(memoryId);
   });
 
-
-
     $(function(){
         $('#memory_display').masonry({
           // options

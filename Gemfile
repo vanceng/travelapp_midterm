@@ -7,7 +7,6 @@ gem 'activesupport'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
-gem 'google_places'
 
 gem 'puma'
 gem 'tux'
