@@ -142,6 +142,7 @@ height: 100%;
     width: 90%;
     margin: auto;
     border: 1px solid #D6D6D6;
+    position:relative;
 }
 
 .memory_space{
@@ -240,5 +241,11 @@ input.search-input{
   width:70%;
   box-sizing: border-box;
   outline:0;
+}
+
+img.display_image {
+    position:relative;
+    max-width: 100%;
+    height: auto;
 }
 
