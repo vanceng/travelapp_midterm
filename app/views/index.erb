@@ -35,13 +35,13 @@
 <div id="memory_display" class="js-masonry"
   data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
 <% @memories.each do |memory|%>
-  <div class="memory_square well">
+  <a href="memory/<%=memory.id%>"><div class="memory_square well">
     <h1><%= memory.city %></h1>
       <h5>Memory Made On: <br><%= memory.created_at.strftime("%A, %d %B %Y ") %></h5>
         <div class="city_photo">
           <img class="memory_image" src = <%=memory.photo_url %> >
         </div>
-  </div>
+  </div></a>
   <%end%>
 </div>
   
