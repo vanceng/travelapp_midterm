@@ -72,7 +72,7 @@ form.search_bar{
 .memory_create{
     width: 600px;
     padding: 10px;  
-    margin: auto;
+    margin: 100px;
     background: #eee;
     text-align: center;
     background-color: #b0c4de;
@@ -137,3 +137,5 @@ div.well{
     background: white;
     width: 50%;
 }
+
+
