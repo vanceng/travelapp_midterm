@@ -4,23 +4,31 @@
     <div class="search_bar">
       <form method="POST" action="/" class="search_bar">
     
-        <div class="btn-group">
-          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" name="category"> Categories <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Food</a></li>
-            <li><a href="#">View</a></li>
-            <li><a href="#">Landmark</a></li>
-            <li><a href="#">Venue</a></li>
-          </ul>
-        </div><br><br>
+        <label for="category">Enter the category:</label><br>
+        <select class="memory-input" name = "category">
+          <option value="nil" selected></option>
+          <option value="Food">Food</option>
+          <option value="View">View</option>
+          <option value="Landmark">Landmark</option>
+          <option value="Venue">Venue</option>
+        </select><br><br>
+
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="City" name="city">
+          <input type="text" class="memory-input" placeholder="City" value="" name="city">
         </div>
-          <input class="searchbutton" type="image" src="/img/button2.png" value="search" alt="Submit Form" />
+
+        <input class="searchbutton" type="image" src="/img/button2.png" value="search" alt="Submit Form"/>
+        
       </form>
+
+
+
+
     </div>  
   </div>
+
+
+
 
 <div id="memory_display" class="js-masonry"
   data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
