@@ -71,17 +71,19 @@ google.maps.event.addDomListener(window, 'load', generateMap);
   <div class="memory_create">
 
   <form method="POST" action="/memory/create" class='memory_form'>
-    <label for="memories">Enter your Memory:</label><br>
-    <input class="memory-input" type="text" name="comment" value="" placeholder="What was memorable about this spot?"><br><br>
-    <label for="url">Photo URL:</label><br>
-    <input class="memory-input"type="text" name="photo_url" value="" placeholder="Add a URL of a photo"><br><br>
-    <label for="category">Enter the category:</label><br>
+    <label for="memories">ENTER YOUR MEMORY:</label><br>
+    <input class="memory-input" type="text" name="comment" value="" ><br><br>
+    <label for="url">PHOTO URL:</label><br>
+    <input class="memory-input"type="text" name="photo_url" value="" placeholder=><br><br>
+    <label for="category">CATEGORY:</label><br>
     <select class="memory-input" name = "category">
       <option value="nil" selected></option>
-      <option value="Food">Food</option>
-      <option value="View">View</option>
-      <option value="Landmark">Landmark</option>
-      <option value="Venue">Venue</option>
+      <option value="food">Food</option>
+      <option value="view">View</option>
+      <option value="landmark">Landmark</option>
+      <option value="venue">Venue</option>
+      <option value="coffee">Coffee</option>
+      <option value="just 'cause">Just 'Cause</option>
     </select><br><br>
  
     <input type="hidden" name="longitude" class="longitude">

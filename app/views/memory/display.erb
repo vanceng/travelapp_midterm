@@ -1,7 +1,7 @@
 <div class="memories" data-memory-ids="<%= @memories.pluck(:id).to_json %>">
 
   <div class="city_title">
-    <h1><%= @memories[0].city %></h1>
+    <a class= "city_link" href= "/traveller/<%=@memories[0].traveller_id%>/<%=@memories[0].city%>"><h6><%= @memories[0].city %></h6></a>
   </div>
 
   <div class="memory_list">

@@ -2,6 +2,7 @@ body {
   color: grey;
   padding-top: 60px;
   background: #EEEEEE;
+  font-family: futura;
 }            
 
 #items .item {
@@ -86,6 +87,7 @@ h1 {
     background-image: url(../img/parisbackground.jpg);
     background-position: 0% 25%;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     color: white;
     margin: 10px;
@@ -124,6 +126,7 @@ div.well{
     left: 0;
     background: blue;
     width: 50%;
+    color: white;
 }
 
 .memory_list{
@@ -270,9 +273,22 @@ h1.memory_block_comment {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  text-align: center;
   font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   font-size: 36px;
   font-style: italic;
   font-variant: normal;
   font-weight: 500;
+}
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+h6{
+  color: white;
+  font-size: 36px;
+  text-align: center;
 }
