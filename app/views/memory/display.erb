@@ -1,8 +1,6 @@
 <div class="memories" data-memory-ids="<%= @memories.pluck(:id).to_json %>">
 
-  <div class="city_title">
-    <h1><%= @memories[0].city %></h1>
-  </div>
+
 
   <div class="memory_list">
     <% @memories.each do |memory|%>

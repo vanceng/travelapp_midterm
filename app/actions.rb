@@ -42,6 +42,7 @@ end
 
 post '/memory/create' do
   # redirect '/' unless session[:id]
+  city = params[:city]
   @temp_memory = Memory.new(
     traveller_id: session[:id],
     title: params[:title],
@@ -50,7 +51,7 @@ post '/memory/create' do
     category: params[:category],
     latitude: params[:latitude],
     longitude: params[:longitude],
-    city: params[:city],
+    city: city.downcase,
     address: params[:address]
     )
     if @temp_memory.save
@@ -78,7 +79,8 @@ get '/api/memory/:id' do
 end
 
 get '/traveller/:id/:city' do
-  @memories = Memory.where(traveller_id: params[:id], city: params[:city])
+  city = params[:city]
+  @memories = Memory.where(traveller_id: params[:id], city: city.downcase)
   erb :'memory/display'
 end 
 

@@ -73,7 +73,7 @@ form.search_bar{
     width: 600px;
     margin-top: 500px;
     padding: 10px;  
-    margin: auto;
+    margin: 100px;
     background: #eee;
     text-align: center;
     background-color: #b0c4de;
@@ -160,4 +160,5 @@ padding-top: 110px;
 .test{
     margin-top: 500px;
 }
+
 
