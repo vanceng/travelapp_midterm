@@ -4,17 +4,23 @@
     <h1><%= @memories[0].city %></h1>
   </div>
 
-  <div class="memory_block">
-    Specific Memory or list of city memories
+  <div class="memory_list">
     <% @memories.each do |memory|%>
-      <h1><%= memory.comment %></h1>
-      <h1><%= memory.title %></h1>
-      <h1><%= memory.latitude %></h1>
-      <h1><%= memory.longitude %></h1>
-      <h1><%= memory.category %></h1>
-      <h1><%= memory.created_at.strftime("%A, %d %B %Y at %I.%M %p") %></h1>
-      <img class="memory_image" src = <%=memory.photo_url %> >
+
+      <div class="memory_block">
+       <h1><%= memory.created_at.strftime("%A, %d %B %Y at %I.%M %p") %></h1>
+        <h1><%= memory.comment %></h1>
+        <h1><%= memory.category %> at <%= memory.latitude %>, <%= memory.longitude %></h1>
+        <div class = "memory_block_photo">
+          <img src = <%=memory.photo_url %> >
+        </div>
+      </div>
+
+      <div class="memory_space">
+      </div>
+
     <%end%>
+
   </div>
 
 </div>
@@ -30,7 +36,6 @@
   </div>
 
 </div>
-
 
 
 

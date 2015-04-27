@@ -1,11 +1,8 @@
+var map;
 
- $(document).ready(function() {
-    
-    var map;
+$(document).ready(function() {
 
-
-
-    function displayMemoryMarker(memoryId) {
+  function displayMemoryMarker(memoryId) {
     $.ajax({
       url: "/api/memory/"+memoryId,
       success: function(response) {
@@ -17,6 +14,10 @@
         var bounds = map.getBounds();
         bounds.extend(coords);
         map.fitBounds(bounds);
+
+        // document.querySelector('.map_box').innerHTML = response.created_at;
+        // $('.map_box').html(response.created_at);
+
 
         // Create and display the map
         var contentString = '<div id="content">'+
@@ -43,7 +44,6 @@
         var marker = new google.maps.Marker({
           position: coords,
 
-          animation:google.maps.Animation.BOUNCE
 
         });
         
@@ -186,20 +186,10 @@
     mapTypeId:google.maps.MapTypeId.ROADMAP,
     styles: styles
   };
-
   map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
   $.each(memoryIds, function(index, memoryId){
     displayMemoryMarker(memoryId);
   });
-
-    $(function(){
-        $('#memory_display').masonry({
-          // options
-        itemSelector : '.memory_square',
-        columnWidth : 240
-    });
-
-
 
 });
