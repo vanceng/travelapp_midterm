@@ -17,59 +17,22 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="City" name="city">
         </div>
-          <button type="submit" value="search" class="btn btn-default">Search</button>
+          <input class="searchbutton" type="image" src="./img/button2.png" value="search" alt="Submit Form" />
       </form>
     </div>  
   </div>
- 
 
-  <div class="row">
-    <div class="item">
-      <% @memories.each do |memory|%>
-      <div class="well" > 
-        <h1><%= memory.city %></h1>
-        <h3>memories made <%= memory.created_at %></h3>
+<div id="memory_display" class="js-masonry"
+  data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
+<% @memories.each do |memory|%>
+  <div class="memory_square well">
+    <h1><%= memory.city %></h1>
+      <h5>Memory Made On: <br><%= memory.created_at.strftime("%A, %d %B %Y ") %></h5>
         <div class="city_photo">
           <img class="memory_image" src = <%=memory.photo_url %> >
         </div>
-      </div>
-      <%end%>
-    </div>
-
-
-<div class="row"> 
-  <div class="item">
-    <div class="well"> 
-        7 blah blah blahs<br>
-        dasf<br>
-        sdf<br>
-        <br>
-        <br>
-        <br>
-        <br>
-<br>
-        <br>
-<br>
-        <br>
-<br>
-        <br>
-<br>
-        <br>
-
-        <br>
-        sadf
-
-    </div>
   </div>
-  <div class="item">
-    <div class="well"> 
-        7 blah blah blah<br>
-        sdf<br>
-        asdf<br>
-        asdf
-    </div>
-  </div>
-
-  </div>
+  <%end%>
+</div>
   
 </div>
