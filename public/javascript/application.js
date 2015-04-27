@@ -18,17 +18,13 @@ $(document).ready(function() {
         // document.querySelector('.map_box').innerHTML = response.created_at;
         // $('.map_box').html(response.created_at);
 
-
         // Create and display the map
         var contentString = '<div id="content">'+
           '<div id="siteNotice">'+
           '</div>'+
           //'<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
           '<div id="bodyContent">'+
-          '<p><b>time</b></p>'+
-
-          '<p class="map_box"><b>'+response.created_at+'</b></p>'+
-
+          '<p class="map_box"><b>'+response.comment+'</b></p>'+
           '</div>'+
           '</div>';
 
