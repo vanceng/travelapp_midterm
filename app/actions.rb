@@ -83,7 +83,8 @@ get '/api/memory/:id' do
 end
 
 get '/traveller/:id/:city' do
-  @memories = Memory.where(traveller_id: params[:id], city: params[:city])
+  city = params[:city]
+  @memories = Memory.where(traveller_id: params[:id], city: city.downcase)
   erb :'memory/display'
 end 
 

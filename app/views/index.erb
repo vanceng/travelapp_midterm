@@ -7,7 +7,7 @@
         <div class="btn-group">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" name="category"> Categories <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu" role="menu" name="category">
+          <ul class="dropdown-menu" role="menu">
             <li><a href="#">Food</a></li>
             <li><a href="#">View</a></li>
             <li><a href="#">Landmark</a></li>
@@ -25,13 +25,13 @@
 <div id="memory_display" class="js-masonry"
   data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
 <% @memories.each do |memory|%>
-  <a href="memory/<%=memory.id%>"><div class="memory_square well">
+  <div class="memory_square well">
     <h1><%= memory.city %></h1>
       <h5>Memory Made On: <br><%= memory.created_at.strftime("%A, %d %B %Y ") %></h5>
         <div class="city_photo">
           <img class="memory_image" src = <%=memory.photo_url %> >
         </div>
-  </div></a>
+  </div>
   <%end%>
 </div>
   
