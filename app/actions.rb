@@ -7,8 +7,13 @@ get '/' do
 end
 
 post '/' do
-  @memories = Memory.where(city: params[:city], category: params[:category])
-  erb :'index' 
+  if params[:category] == "nil"
+    @memories = Memory.where(city: params[:city])
+    erb :'index' 
+  else 
+    @memories = Memory.where(city: params[:city], category: params[:category])
+    erb :'index' 
+  end 
 end 
 
 
@@ -83,8 +88,7 @@ get '/api/memory/:id' do
 end
 
 get '/traveller/:id/:city' do
-  city = params[:city]
-  @memories = Memory.where(traveller_id: params[:id], city: city.downcase)
+  @memories = Memory.where(traveller_id: params[:id], city: params[:city])
   erb :'memory/display'
 end 
 

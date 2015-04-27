@@ -9,7 +9,7 @@
       <% @memories.each do |memory|%>
 
         <div class="memory_block">
-         <a href = "/memory/<%=memory.id%>"><h1><%= memory.city %></h1></a>
+         <a href = "/traveller/<%=memory.traveller_id%>/<%=memory.city%>"><h1><%= memory.city %></h1></a>
           <div class = "memory_block_photo">
           </div>
         </div>
