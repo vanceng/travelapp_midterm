@@ -61,12 +61,12 @@ post '/memory/create' do
 end
 
 get '/traveller' do
-  @memory = Memory.where(traveller_id: session[:id]).group("city") 
+  @memories = Memory.where(traveller_id: session[:id]).group("city") 
   erb :'memory/traveller'
 end 
 
 get '/traveller/:id' do
-  @memory = Memory.where(traveller_id: params[:id]).group("city") 
+  @memories = Memory.where(traveller_id: params[:id]).group("city") 
   erb :'memory/traveller'
 end 
 
