@@ -1,7 +1,7 @@
 body {
   color: grey;
   padding-top: 60px;
-  background: white;
+  background: #EEEEEE;
 }            
 
 #items .item {
@@ -81,11 +81,6 @@ h1 {
     text-align: center;
 }
 
-.memory_block{
-    background: #eee;
-    padding-top: 80px;
-}
-
 .jumbotron{
     margin-bottom: 0px;
     background-image: url(../img/parisbackground.jpg);
@@ -99,9 +94,9 @@ h1 {
 }
 
 .memories{
-  background: black;
-width: 50%;
-float: left;
+  width: 50%;
+  float: left;
+  height: 150%;
 }
 
 .map_rightdisplay{
@@ -111,11 +106,12 @@ position: fixed;
 top: 50px;
 right: 0;
 padding-top: 10px;
+height: 50%;
 }
 
 .google_map{
 width: 100%;
-height: 800px;
+height: 100%;
 }
 
 div.well{
@@ -135,6 +131,7 @@ div.well{
 .memory_list{
 background: #EEEEEE;
 padding-top: 110px;
+height: 100%;
 }
 
 .memory_block{
@@ -142,6 +139,7 @@ padding-top: 110px;
     padding-left:  30px;
     padding-right: 30px;
     padding-bottom: 20px;
+    padding-top: 10px;
     width: 90%;
     margin: auto;
     border: 1px solid #D6D6D6;
@@ -176,8 +174,9 @@ padding-top: 110px;
     position: fixed;
     left: 0;
     top: 60px;
-    background: blue;
+    background: #1975D1;
     width: 50%;
+    color: white;
 }
 
 .createbutton{

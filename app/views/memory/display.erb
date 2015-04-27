@@ -8,7 +8,7 @@
     <% @memories.each do |memory|%>
 
       <div class="memory_block">
-       <h1><%= memory.created_at.strftime("%A, %d %B %Y at %I.%M %p") %></h1>
+       <a href = "/memory/<%=memory.id%>"><h1><%= memory.created_at.strftime("%A, %d %B %Y at %I.%M %p") %></h1></a>
         <h1><%= memory.comment %></h1>
         <h1><%= memory.category %> at <%= memory.latitude %>, <%= memory.longitude %></h1>
         <div class = "memory_block_photo">

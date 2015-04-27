@@ -1,20 +1,36 @@
-<h1 class="">List of Cities</h1>
-<div style="width: 100%;">
-   <div style="float:left; width: 80%">
-   Cities
-   </div>
-   <div style="float:right;">
-    <% @memory.each do |memory|%>
+
+  <div class="memories" data-memory-ids="<%= @memories.pluck(:id).to_json %>">
+
+    <div class="city_title">
+      <h1>My Places</h1>
+    </div>
+
+    <div class="memory_list">
+      <% @memories.each do |memory|%>
+
+        <div class="memory_block">
+         <a href = "/memory/<%=memory.id%>"><h1><%= memory.city %></h1></a>
+          <div class = "memory_block_photo">
+          </div>
+        </div>
+
+        <div class="memory_space">
+        </div>
+
+      <%end%>
+
+    </div>
+
+  </div>
 
 
-   <h1><%= memory.city %></h1>
-   <h3>memories made <%= memory.created_at %></h3>
 
+  <div class="map_rightdisplay">
 
-    <img class="memory_image" src = <%=memory.photo_url %> >
-    <%end%>
-   </div>
-   Map!
-   </div>
-</div>
-<div style="clear:both"></div>
+    <script src="http://maps.googleapis.com/maps/api/js">
+    </script>
+
+    <div id="googleMap" class= "google_map"> 
+    </div>
+
+  </div>
