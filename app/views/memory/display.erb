@@ -8,11 +8,11 @@
     <% @memories.each do |memory|%>
 
       <div class="memory_block">
-       <a href = "/memory/<%=memory.id%>"><h1><%= memory.created_at.strftime("%A, %d %B %Y at %I.%M %p") %></h1></a>
-        <h1><%= memory.comment %></h1>
-        <h1><%= memory.category %> at <%= memory.latitude %>, <%= memory.longitude %></h1>
+        <a href = "/memory/<%=memory.id%>"><h1 class = "memory_block_title" ><%= memory.created_at.strftime("%A, %d %B %Y") %></h1></a>
+        <p class = "memory_block_time"><%= memory.latitude %>, <%= memory.longitude %> | <%= memory.created_at.strftime("%I.%M %p") %> | <%= memory.category %></p>
+        <h1 class = "memory_block_comment">"<%= memory.comment %>"</h1>
         <div class = "memory_block_photo">
-          <img class="display_image" src=<%=memory.photo_url %> >
+          <img class="display_image" src= <%=memory.photo_url %> >
         </div>
       </div>
 

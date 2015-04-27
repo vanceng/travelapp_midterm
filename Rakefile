@@ -30,10 +30,10 @@ task "db:populate" do
   Traveller.create!(email: "sakthi@sakthi.com", password: "password")
   
   Memory.delete_all
-  Memory.create!(traveller_id: 1,city: "vancouver", comment: "The Steamclock rings on the hour. An icon of Gastown.", category: "landmark", photo_url: "/img/city/vancouver.jpg", latitude: 49.284436, longitude: -123.108896)
+  Memory.create!(traveller_id: 1,city: "Vancouver", comment: "The Steamclock rings on the hour. An icon of Gastown.", category: "landmark", photo_url: "/img/city/vancouver.jpg", latitude: 49.284436, longitude: -123.108896)
   Memory.create!(traveller_id: 1,city: "Vancouver", comment: "This Coffee was one of the best I ever had.", category: "food", photo_url: "/img/city/vancouver2.jpg", latitude: 49.283915, longitude: -123.109554)
   Memory.create!(traveller_id: 1,city: "Vancouver",comment: "Walking in Lynn canyon felt like I was in a land forgotten by time.", category: "nature", photo_url: "/img/city/vancouver3.jpg", latitude: 49.339074, longitude: -123.018063)
-  Memory.create!(traveller_id: 1,city: "Vancouver",comment: "The view from the float plane was incredible!", category: "view", photo_url: "./img/city/vancouver4.jpg", latitude: 49.2890192, longitude: -123.1239276)
+  Memory.create!(traveller_id: 1,city: "Vancouver",comment: "The view from the float plane was incredible!", category: "view", latitude: 49.2890192, longitude: -123.1239276)
   Memory.create!(traveller_id: 1,city: "Goa",comment: "The beaches were unlike anything I have ever seen. Try a Mango Lassi from a local vendor!", category: "view", photo_url: "/img/city/goa.jpg", latitude: 15.221003, longitude: 73.936534)
   Memory.create!(traveller_id: 1,city: "Goa",comment: "Watching the sun set over the water sent chills through my body.", category: "view", photo_url: "/img/city/goa2.jpg", latitude: 15.2185497, longitude: 73.9309366)
   Memory.create!(traveller_id: 1,city: "Goa",comment: "These caves reminded me of something out of a movie.", category: "nature", photo_url: "/img/city/goa3.jpg", latitude: 15.551828, longitude: 74.024991)
