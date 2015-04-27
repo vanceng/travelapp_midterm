@@ -1,6 +1,11 @@
- $(document).ready(function() {
 
-  function displayMemoryMarker(memoryId) {
+ $(document).ready(function() {
+    
+    var map;
+
+
+
+    function displayMemoryMarker(memoryId) {
     $.ajax({
       url: "/api/memory/"+memoryId,
       success: function(response) {
@@ -9,9 +14,9 @@
         // Create the coordinate of the memory
         var coords = new google.maps.LatLng(response.latitude, response.longitude);
         var time = response.created_at
-
-        // document.querySelector('.map_box').innerHTML = response.created_at;
-        // $('.map_box').html(response.created_at);
+        var bounds = map.getBounds();
+        bounds.extend(coords);
+        map.fitBounds(bounds);
 
         // Create and display the map
         var contentString = '<div id="content">'+
@@ -19,7 +24,10 @@
           '</div>'+
           //'<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
           '<div id="bodyContent">'+
-          '<p class="map_box"><b> Hello??</b></p>'+
+          '<p><b>time</b></p>'+
+
+          '<p class="map_box"><b>'+response.created_at+'</b></p>'+
+
           '</div>'+
           '</div>';
 
@@ -174,24 +182,26 @@
 
   var mapProp = {
     center: new google.maps.LatLng(49.282022399999995, -123.108199),
-    zoom: 3,
+    zoom: 15,
     mapTypeId:google.maps.MapTypeId.ROADMAP,
     styles: styles
   };
-  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+  map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
   $.each(memoryIds, function(index, memoryId){
     displayMemoryMarker(memoryId);
   });
 
 
-});
 
- $(function(){
-     $('#memory_display').masonry({
+    $(function(){
+        $('#memory_display').masonry({
           // options
-      itemSelector : '.memory_square',
-      columnWidth : 240
-     });
+        itemSelector : '.memory_square',
+        columnWidth : 240
+    });
+
+
 
 });
