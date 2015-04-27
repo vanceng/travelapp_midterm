@@ -57,8 +57,6 @@ function callback(results, status) {
       console.log(results[i]["vicinity"]);
       $('input.place_id').val(results[i]["place_id"]);
       $('input.city').val(results[i]["vicinity"]);
-
-    // $('input.longitude').val(obj.coords.longitude);
     }
   }
 }
@@ -71,12 +69,12 @@ function callback(results, status) {
   <div class="memory_create">
 
   <form method="POST" action="/memory/create" class='memory_form'>
-    <label for="memories">Enter your Memory:</label>
-    <input class="memoryfield" type="text" name="comment" value="" placeholder="What was memorable about this spot?"><br><br>
-    <label for="url">Photo URL:</label>
-    <input type="text" name="photo_url" value="" placeholder="Add a URL of a photo"><br><br>
-    <label for="category">Enter the category:</label>
-    <select name = "category">
+    <label for="memories">Enter your Memory:</label><br>
+    <input class="memory-input" type="text" name="comment" value="" placeholder="What was memorable about this spot?"><br><br>
+    <label for="url">Photo URL:</label><br>
+    <input class="memory-input"type="text" name="photo_url" value="" placeholder="Add a URL of a photo"><br><br>
+    <label for="category">Enter the category:</label><br>
+    <select class="memory-input" name = "category">
       <option value="nil" selected></option>
       <option value="Food">Food</option>
       <option value="View">View</option>
@@ -88,6 +86,6 @@ function callback(results, status) {
     <input type="hidden" name="latitude" class="latitude">
     <input type="hidden" name="city" class="city">
     <input type="hidden" name="address" class="place_id">
-    <input type="submit" value="Save" class = "submit_btn">
+    <input type="image" src="/img/button2.png"  class ="createbutton"/>
   </form>
   </div>
