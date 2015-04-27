@@ -44,7 +44,6 @@ $(document).ready(function() {
         var marker = new google.maps.Marker({
           position: coords,
 
-          animation:google.maps.Animation.BOUNCE
 
         });
         

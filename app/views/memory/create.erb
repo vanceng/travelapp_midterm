@@ -4,8 +4,9 @@
 
 <style type="text/css">
   html, body { height: 100%; margin: 0; padding: 0;}
-  #map-canvas { height: 300px; width: 300px;}
+  #map-canvas { height: 0px; width: 0px;}
 </style>
+
 
 <script type="text/javascript"> 
 
@@ -50,9 +51,8 @@ function generateMap() {
   service.nearbySearch(request, callback);
 }
 
-function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    // debugger 
+function callback(results, status) { 
+  if (status == google.maps.places.PlacesServiceStatus.OK) {  
     for (var i = 0; i < results.length; i++) {
       console.log(results[i]["vicinity"]);
       $('input.place_id').val(results[i]["place_id"]);
@@ -63,11 +63,13 @@ function callback(results, status) {
   }
 }
 
-// google.maps.event.addDomListener(window, 'load', generateMap);
+google.maps.event.addDomListener(window, 'load', generateMap);
 
 
 </script>
 
+<div id='map-canvas'></div>
+<div class = "test">
   <div class="memory_create">
 
   <form method="POST" action="/memory/create" class='memory_form'>
@@ -90,4 +92,5 @@ function callback(results, status) {
     <input type="hidden" name="address" class="place_id">
     <input type="submit" value="Save" class = "submit_btn">
   </form>
+  </div>
   </div>

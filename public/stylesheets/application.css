@@ -71,6 +71,7 @@ form.search_bar{
 
 .memory_create{
     width: 600px;
+    margin-top: 500px;
     padding: 10px;  
     margin: auto;
     background: #eee;
@@ -86,11 +87,6 @@ h1 {
     text-align: center;
 }
 
-.memory_block{
-background: #eee;
-padding-top: 80px;
-}
-
 .jumbotron{
     margin-bottom: 0px;
     background-image: url(../img/parisbackground.jpg);
@@ -104,13 +100,11 @@ padding-top: 80px;
 }
 
 .memories{
-background: black;
 width: 50%;
 float: left;
 }
 
 .map_rightdisplay{
-background: red;
 width: 50%;
 float: right;
 position: fixed;
@@ -133,7 +127,36 @@ div.well{
 .city_title{
     position: fixed;
     left: 0;
-    top: 60px;
-    background: white;
+    top: 55px;
+    background: blue;
     width: 50%;
+}
+
+.memory_list{
+background: #EEEEEE;
+padding-top: 110px;
+}
+
+.memory_block{
+    background: white;
+    padding-left:  30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    width: 90%;
+    margin: auto;
+    border: 1px solid #D6D6D6;
+}
+
+.memory_space{
+    background: #EEEEEE;
+    padding: 15px;
+}
+
+.memory_block_photo {
+    display: table;
+    margin: 0 auto;
+}
+
+.test{
+    margin-top: 500px;
 }
