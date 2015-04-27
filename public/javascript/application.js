@@ -1,4 +1,4 @@
-$(document).ready(function() {
+ $(document).ready(function() {
 
   function displayMemoryMarker(memoryId) {
     $.ajax({
@@ -184,12 +184,14 @@ $(document).ready(function() {
     displayMemoryMarker(memoryId);
   });
 
-  $(function(){
+
+});
+
+ $(function(){
      $('#memory_display').masonry({
           // options
       itemSelector : '.memory_square',
       columnWidth : 240
      });
-});
 
 });

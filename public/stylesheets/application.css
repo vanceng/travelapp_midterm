@@ -72,13 +72,10 @@ form.search_bar{
     width: 600px;
     padding: 10px;  
     margin: auto;
+    margin-top: 100px;
     background: #eee;
     text-align: center;
     background-color: #b0c4de;
-    opacity: 0.5;
-}
-.memory_form .memory_form{
-    opacity:1;
 }
 
 h1 {
@@ -138,4 +135,8 @@ div.well{
 
 .searchbutton{
     height: 2.5em;
+}
+
+.memoryfield{
+    width: 300px; height: 100px; border: 1px solid #999999; padding: 5px;
 }
